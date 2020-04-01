@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NoteDown - A must tool for Productivity</title>
+    {% load static %}
+  <link href="{% static 'home.css' %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!--Header-->
+
+  <header id="background">
+    <nav class="transparent z-depth-0">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo" id="logo">NoteDown</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i style="font-size: 40px;padding-top:20px;"
+              class="material-icons medium">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a class="nav-items" href="#">Home</a></li>
+            <li><a class="nav-items" href="#about">About</a></li>
+            <li><a class="nav-items" href="#features">Features</a></li>
+            <li><a class="nav-items" href="{% url 'login' %}">Login</a></li>
+          </ul>
+        </div>
+        <ul class="sidenav" id="mobile-demo">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h2>Note Every Single thing</h2>
+      <h4>Because everything makes a difference</h4>
+      <a href="{% url 'register' %}" class="waves-effect amber z-depth-4 darken-3 waves-light btn-large">Get Started</a>
+    </div>
+  </header>
+
+  <!--Header Finish-->
+
+  <!--About Section-->
+  <div id="about" class="section white">
+      <div class="row container">
+        <h2 class="header">Our Vision</h2>
+        <p class="grey-text text-darken-3 lighten-3">Our Vision is to help people in increasing productivity. We at NoteDown, know how important time is. It is very precious and once it is gone, it never comes back!
+          Perhaps, we can't properly utilize time because we don't plan things accordingly. Once we start planning things timely, we can see a great change in our lives. May it be students or working professionals, NoteDown will help
+          everyone in achieving their targets. Students can use notedown to proritize their stuffs and can help them to set and achieve targets. May it be assignments, exams or any sort of prepration, notedown will help students to a great extent.
+          Working professionals can also use Notedown, to keep track of their daily tasks or duties so that they don't always have to remember everything and can focus more on work. It has been proven way of increasing productivity and Most of our
+          Clients have also experienced and thus they recommend NoteDown to everyone and their companies.
+        </p>
+      </div>
+    </div>
+  <div class="parallax-container">
+      <div class="parallax"><img id="parallax" src="{% static '/images/abt.jpg' %}"></div>
+    </div>
+
+  <!--About End-->
+
+  <!--Features-->
+  <div id="features">
+    <div class="container">
+      <h2 class="center-align">Features</h2>
+      <div class="row">
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons">access_time</i>
+          <h5>Manage Your Time</h5>
+          <p>Notedown helps you to manage your time by keeping notes of your things and let's you prioritize the important one's.</p>
+        </div>
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons" style="color:#1e88e5;">assignment</i>
+          <h5>Keep Note of Events</h5>
+          <p>Students can keep note of their preprations, Exams and Assignments and plan your work accordingly. This will help you in studying properly.</p>
+        </div>
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons">next_week</i>
+          <h5>Increase Business Productivity</h5>
+          <p>We help you focus more on your work and business thing's so that, remain highly productive throughtout the day. </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons">language</i>
+          <h5>Access Everywhere around world</h5>
+          <p>You don't have to carry your diary anymore. We are with you wherever you go around the world.</p>
+        </div>
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons" style="color:#1e88e5;">date_range</i>
+          <h5>Plan your time</h5>
+          <p>Plan your future event's and keep a track of things going on. We help you to remember the stuffs.</p>
+        </div>
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons">devices_other</i>
+          <h5>Available across all devices</h5>
+          <p>Weather you have a Desktop, Laptop, Smartphone or Smartwatch, we got you covered.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons">equalizer</i>
+          <h5>See results</h5>
+          <p>We make your work and productivity very high and by using our note keeping service, you can achieve your targets</p>
+        </div>
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons" style="color:#1e88e5;">favorite_border</i>
+          <h5>Keep Note of your loved one's</h5>
+          <p>Never forget special day's of your loved one's, who care for you. Keep note of all special days for you and your loved one's.</p>
+        </div>
+        <div class="col l4 s12 center-align">
+          <i class="large material-icons">group_add</i>
+          <h5>Help your team to achieve targets</h5>
+          <p>Strategically noting down points, plans, and steps will help you and you team achieve your business targets.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Features-->
+
+
+  <!--Testmonials-->
+  <div  style="background-color:#333;">
+      <h2 class="center-align" style="margin-top:100px;padding-top: 50px;color: white;">Our Testmonials</h2>
+
+  <div id="slider1">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l4 center-align">
+            <img id="test-img" class="responsive-img" src="{% static '/images/gates.jpeg' %}" src="testmonials">
+        </div>
+        <div class="col s12 l8 ">
+          <p id="test-thought" style="color:white;"><span style="font-size:50px;color: white;">"</span>&nbsp;&nbsp;NoteDown helps me to manage my daily things and helps me focus on my work. I feel more productive, because i keep note of all daily things and Notedown helps me keep tracking all my things. We here at Microsoft use Notedown for every purpose and our project teams also use this service."</p>
+          <h4 class="right-align">- Bill Gates, CEO Microsoft</h4>
+        </div>
+        </div>
+    </div>
+  </div>
+  <div id="slider2" style="display:none;">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 l4 center-align">
+              <img id="test-img" style="width:250px;" class="responsive-img" src="{% static '/images/sundar.jpg' %}" src="testmonials">
+          </div>
+          <div class="col s12 l8 ">
+            <p id="test-thought" style="color:white;"><span style="font-size:50px;color: white;">"</span>&nbsp;&nbsp;I personally loved this concept of notedown, where people can note down their things and can retrieve anywhere in the world. It increases you working quality as setting goals always helps to achieve. Our teams at google use NoteDown for various projects. I surey recommends it to students and Developers."</p>
+            <h4 class="right-align">- Sundar Pichai, CEO Google</h4>
+          </div>
+          </div>
+      </div>
+    </div>
+    <div class="container center-align">
+        <a style="cursor:pointer;" id="slider"><i class="material-icons small" style="color:white;">fiber_manual_record</i></a>
+    </div>
+    </div>
+  <!--Testmonials end-->
+
+    <!--Pricing-->
+      <div id="pricing" class="container" style="margin-top:100px;">
+      <h2 class="center-align">Pricing</h2>
+      <h5 class="center-align" style="margin-bottom:30px">Choose what is best for you...</h5>
+    <div id="grid">
+      <div  class="center-align card z-depth-2">
+        <h3>Basic</h3>
+        <p>1000 Notes</p>
+        <p>No personalization</p>
+        <p>No E-mail Remainder</p>
+        <p>99$</p>
+        <button style="border-radius: 30px;" class="waves-effect waves-light amber darken-3 btn-large">Buy Now</button>
+      </div>
+      <div id="scale" class="center-align card z-depth-2">
+          <h3>Premium</h3>
+          <p>10,000 Notes</p>
+          <p>personalization Available</p>
+          <p>E-mail Remainder</p>
+          <p>299$</p>
+          <button style="border-radius: 30px;" class="waves-effect amber darken-3 waves-light btn-large">Buy Now</button>
+      </div>
+      <div class="center-align card z-depth-2">
+          <h3>Professional</h3>
+          <p>Unlimited</p>
+          <p>personalization Available</p>
+          <p>E-mail Remainder</p>
+          <p>599$</p>
+          <button style="border-radius: 30px;" class="waves-effect waves-light amber darken-3 btn-large">Buy Now</button>
+      </div>
+    </div>
+    </div>
+
+    <!--Call to action-->
+    <div style="background-color:#eeeeee;">
+    <div class="container center-align">
+      <h1 style="padding:50px;color:black;">What are you waiting for ?</h1>
+      <a href="{% url 'register' %}" style="margin:0px 0px 50px 0px; border-radius: 30px;" class="waves-effect blue darken-1 waves-light btn-large z-depth-4">Join Now</a>
+    </div>
+    </div>
+    <!--Footer-->
+
+
+    <footer style="background-color:#333; border-top: 2px solid black;" class="page-footer">
+        <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text" style="font-size:30px;">NoteDown</h5>
+                <p class="grey-text text-lighten-4">Github</p>
+                <p class="grey-text text-lighten-4">Linkedin</p>
+                <p class="grey-text text-lighten-4">Facebook</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Features</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Pricing</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <div  class="footer-copyright">
+          <div class="container">
+          <h5 class="center-align">© 2020 NoteDown</h5>
+          </div>
+        </div>
+      </footer>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{% static 'home.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Get Started- NoteDown</title>
+    {% load static %}
+
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!--NAVBAR-->
+
+  <header id="background">
+      <nav class="transparent z-depth-0">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="{% url 'home' %}" class="brand-logo" id="logo">NoteDown</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i style="font-size: 40px;padding-top:20px;"
+                class="material-icons medium">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a class="nav-items" href="{% url 'home' %}">Home</a></li>
+              <li><a class="nav-items" href="#">About</a></li>
+              <li><a class="nav-items" href="#">Features</a></li>
+              <li><a class="nav-items" href="#">Pricing</a></li>
+              <li><a class="nav-items" href="{% url 'register' %}">Register</a> </li>
+
+            </ul>
+          </div>
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a class="nav-items" href="{% url 'login' %}">Login</a> </li>
+          </ul>
+        </div>
+      </nav>
+  
+      <main class="container">
+        <div class="container">
+          <div class="col l12">
+            <h1 class="center-align" style="color:white;">Login</h1>
+              {% if message %}
+                  <h3 style="color: white;" class="center-align">{{ message }}</h3>
+              {% endif %}
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+              <label style="font-size:20px;color:white;">Username :</label>
+              <input type="text" name="username" required>
+              <label style="font-size:20px;color:white;">Password :</label>
+              <input type="password" name="password" required>
+              <div class="center-align">
+              <button type="submit" class="waves-effect waves-light btn-large">Login</button>
+              </div>
+            </form>
+          </div>
+            <h5 class="center-align"><a style="color: white;" href="{% url 'forgot' %}">Forgot password ?</a></h5>
+        </div>
+      </main>
+    </header>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+*{
+  margin:0;
+  padding:0;
+}
+.sidenav li a{
+  color: black;
+}
+#background{
+  background-image: url('./images/mainimg.jpg');
+  height: 100vh;
+  box-shadow:inset 0 0 0 2000px rgba(3,3,3,0.35);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: left;
+}
+#logo{
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  padding: 20px;
+  letter-spacing: 5px;
+}
+.nav-items{
+  padding: 20px;
+  font-size: 20px;
+}
+
+form{
+  padding: 50px;
+  font-size: 25px;
+}
+
+input{
+  color: white;
+  font-size: 25px !important;
+}

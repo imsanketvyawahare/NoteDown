@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NoteDown - A must tool for Productivity</title>
+    {% load static %}
+  <link href="{% static 'app.css' %}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--Navbar-->
+
+<!-- Dropdown Structure -->
+
+<ul id="dropdown1" class="dropdown-content" >
+  <li><a href="{% url 'change' %}">Change Password</a></li>
+  <li><a href="{% url 'logout' %}">Logout</a></li>
+</ul>
+
+  <nav class="blue">
+      <div class="container">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">NoteDown</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1" style="font-size: 20px;">Welcome {{ name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+      </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#">Welcome {{ name }}</a></li>
+    <li><a href="{% url 'change' %}">Change Password</a></li>
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+  </ul>
+
+
+
+{##}
+{#<nav class="blue">#}
+{#    <div class="container">#}
+{#  <div class="nav-wrapper">#}
+{#    <a href="#!" class="brand-logo">NoteDown</a>#}
+{#    <ul class="right hide-on-med-and-down">#}
+{#      <!-- Dropdown Trigger -->#}
+{#      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Welcome {{ name }}<i class="material-icons right">arrow_drop_down</i></a></li>#}
+{#    </ul>#}
+{#  </div>#}
+{#    </div>#}
+{#</nav>#}
+  <!--Navbar End-->
+
+  <!--Modal -->
+  <div class="container" style="margin-top:100px;">
+    <!-- Modal Trigger -->
+    <a id="modal-btn" style="margin-bottom: 15px;" class="waves-effect blue waves-light btn-large modal-trigger" href="#modal1">Add Note</a>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <form method="post" action="{% url 'add' %}">
+            {% csrf_token %}
+          <label>Enter Title</label>
+          <input type="text" name="title" placeholder="Enter the Note" required>
+          <label>Enter The Note</label>
+          <input type="text" name="note" placeholder="Enter the Note" required>
+            <div class="modal-footer">
+        <button type="submit" class="modal-close waves-effect waves-green btn-flat">Add</button>
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--Model End-->
+  <!--Notes-->
+  {% for d in data %}
+  <div class="container">
+      <ul class="collapsible">
+          <li>
+            <div class="collapsible-header" style="font-size: 22px;">{{ d.title }}<div style="margin-left:auto;"><a id="click" href="{% url 'delete' d.id %}">Delete</a></div>
+            </div>
+              <div class="collapsible-body"><span style="font-size: 22px;"><b>{{ d.note }}</b></span><div style="color: red;">{{ d.date }}</div></div>
+          </li> 
+        </ul>
+  </div>
+  {% endfor %}
+
+
+  <!--End notes-->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{% static 'app.js' %}"></script>
+</body>
+
+</html>

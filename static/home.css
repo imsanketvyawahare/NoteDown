@@ -1,0 +1,150 @@
+*{
+  margin:0;
+  padding:0;
+  font-family: 'IBM Plex Serif', serif;
+}
+p{
+  font-size: 19px;
+}
+h5{
+  font-size: 28px;
+  font-weight: bolder;
+}
+.sidenav li a{
+  color: black;
+}
+#background{
+  background-image: url('./images/mainimg.jpg');
+  height: 100vh;
+  box-shadow:inset 0 0 0 2000px rgba(3,3,3,0.35);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: left;
+}
+#logo{
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  padding: 20px;
+  letter-spacing: 5px;
+}
+.nav-items{
+  padding: 20px;
+  font-size: 20px;
+}
+#background div h2,h4{
+  font-size: 4rem;
+  color: white;
+  margin-top: 30vh;
+}
+#background div button{
+  border-radius:30px;
+  margin-top:20px;
+}
+#abt-img{
+  margin-top: 220px;
+  /* margin-left: -50px; */
+}
+#abt-head{
+  font-size: 25px;
+  text-align: justify;
+  margin-top: 10px;
+}
+@media screen and (max-width:1000px){
+  #abt-img{
+    margin-top:0px;
+ }
+}
+
+#features{
+  background-color: #fff;
+  margin-top: 50px;
+}
+i{
+  color:#ff8f00;
+}
+#test-img{
+  border-radius: 50%;
+  height: 200px;
+  margin-top: 50px;
+}
+
+#test-thought{
+  margin-top: 50px;
+  font-size: 20px;
+}
+@media screen and (max-width:1000px){
+  #test-thought{
+    margin-top:10px;
+ }
+ #test-img{
+   margin-top:20px;
+ }
+}
+
+#grid{
+  display: grid;
+  grid-gap: 150px;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+}
+
+@media screen and (max-width:1000px){
+  #grid{
+    grid-gap: 10px;
+  }
+}
+#grid div h3{
+  border-bottom: 1px solid black;
+  margin-top: -1px;
+  padding: 20px;
+}
+
+#grid div p{
+  font-size: 23px;
+  padding: 20px;
+}
+
+
+#grid div p:nth-child(5){
+  font-size: 23px;
+  padding: 20px;
+  background-color:#ff8f00 ;
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 50px;
+  margin-top:-280px;
+}
+
+#grid div p:nth-child(2){
+  margin-top:40px;
+}
+
+
+#grid div button{
+  margin-top: 220px;
+  margin-bottom: 20px;
+}
+
+
+#grid div:hover{
+  box-shadow: 8px 8px 8px 8px grey;
+  background-color: #1e88e5;
+}
+
+#parallax{
+  background-position: center center;
+  background-size: cover;
+  background-attachment: scroll;
+  width: 100%;
+}
+
+#scale{
+  transform:scale(1.1);
+  /* background-color: #1e88e5; */
+}
+
+@media screen and (max-width:1000px){
+  #scale{
+    transform:scale(1);
+  }
+
+}

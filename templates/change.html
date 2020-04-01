@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Password</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Navbar-->
+    <ul id="dropdown1" class="dropdown-content" >
+      <li><a href="#">Change Password</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+
+    <nav class="blue">
+        <div class="container">
+      <div class="nav-wrapper">
+        <a href="{% url 'application' %}" class="brand-logo">NoteDown</a>
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Welcome {{ name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+        </div>
+    </nav>
+    <div class="container">
+        {% if message %}
+            <h4 class="center-align" style="background-color: #1e88e5;">{{ message }}</h4>
+        {% endif %}
+    </div>
+    <div style="margin-top: 100px;" class="container">
+        <div class="container">
+        <form action="{% url 'change' %}" method="post">
+            {% csrf_token %}
+            <label>Current Password</label>
+            <input type="password" name="current-password">
+            <br>
+            <label>New Password</label>
+            <input type="password" name="new-password">
+            <br>
+            <label>Re-type New Password</label>
+            <input type="password" name="confirm-new-password">
+            <br>
+            <button type="submit" class="waves-effect blue waves-light btn modal-trigger">Change Password</button>
+        </form>
+        </div>
+    </div>
+
+
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('.sidenav').sidenav();
+        $('.modal').modal();
+        $('.collapsible').collapsible();
+        $(".dropdown-trigger").dropdown({ hover: false });
+})
+    </script>
+</body>
+</html>
